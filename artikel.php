@@ -108,7 +108,7 @@ if (isset($_POST['simpan'])) {
             unlink("img/" . $_POST['gambar_lama']);
         }
 
-        $stmt = $conn->prepare("UPDATE article 
+        $stmt = $conn->prepare("UPDATE artikel
                                 SET 
                                 judul =?,
                                 isi =?,
@@ -120,7 +120,7 @@ if (isset($_POST['simpan'])) {
         $stmt->bind_param("sssssi", $judul, $isi, $gambar, $tanggal, $username, $id);
         $simpan = $stmt->execute();
     } else {
-		    //jika tidak ada id, lakukan insert data baru
+		    
         $stmt = $conn->prepare("INSERT INTO artikel (judul,isi,gambar,tanggal,username)
                                 VALUES (?,?,?,?,?)");
 
@@ -144,7 +144,7 @@ if (isset($_POST['simpan'])) {
     $conn->close();
 }
 
-//jika tombol hapus diklik
+
 if (isset($_POST['hapus'])) {
     $id = $_POST['id'];
     $gambar = $_POST['gambar'];

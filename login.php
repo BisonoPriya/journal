@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     header("location:admin.php");
   } else {
 	  //jika tidak ada (gagal), alihkan kembali ke halaman login
-    header("location:login.php");
+    header("location:index.php");
   }
 
 	//menutup koneksi database
